@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatlub - Private & Minimalist Messenger</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-bg-top: #1C2E58;
+            --primary-bg-bottom: #0A192F;
+            --accent-color: #6AF2D7;
+            --text-color: #E0E0E0;
+            --heading-color: #FFFFFF;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'IBM Plex Sans Thai', sans-serif;
+            background: linear-gradient(to bottom, var(--primary-bg-top), var(--primary-bg-bottom));
+            background-attachment: fixed;
+            color: var(--text-color);
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(106, 242, 215, 0.1);
+            margin-bottom: 40px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--heading-color);
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        /* เพิ่ม CSS สำหรับโลโก้รูปภาพ */
+        .logo img {
+            width: 32px; /* หรือขนาดที่เหมาะสม */
+            height: 32px; /* หรือขนาดที่เหมาะสม */
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin-left: 24px;
+            font-weight: 400;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        section {
+            padding: 60px 0;
+        }
+        
+        #hero {
+            text-align: center;
+            padding: 80px 0;
+        }
+
+        #hero h1 {
+            font-size: 48px;
+            color: var(--heading-color);
+            margin-bottom: 16px;
+        }
+
+        #hero p {
+            font-size: 20px;
+            color: var(--accent-color);
+        }
+
+        h2 {
+            font-size: 32px;
+            font-weight: 600;
+            color: var(--heading-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+            margin-bottom: 24px;
+        }
+        
+        p {
+            margin-bottom: 16px;
+        }
+        
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 60px;
+            border-top: 1px solid rgba(106, 242, 215, 0.1);
+            font-size: 14px;
+            color: rgba(224, 224, 224, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="#" class="logo">
+                <img src="chatlub-logo.png" alt="Chatlub Logo">
+                <span>Chatlub</span>
+            </a>
+            <nav>
+                <a href="#terms">Terms</a>
+                <a href="#privacy">Privacy</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </header>
+
+        <main>
+            <section id="hero">
+                <h1>Discreet Tech, Absolute Privacy.</h1>
+                <p>The minimalist messenger that puts your privacy first. Coming soon.</p>
+            </section>
+
+            <section id="terms">
+                <h2>Terms of Service</h2>
+                <p><strong>Effective Date: October 10, 2025</strong></p>
+                <p>Welcome to Chatlub. By using our application, you agree to these terms. Our service is provided for personal, non-commercial communication.</p>
+                <p>You agree not to use Chatlub for any illegal activities, including but not limited to harassment, spamming, or distribution of malicious content. We reserve the right to suspend accounts that violate these terms.</p>
+                <p>The service is provided "as-is" without any warranties. We are not liable for any damages or losses resulting from your use of the service.</p>
+            </section>
+
+            <section id="privacy">
+                <h2>Privacy Policy</h2>
+                <p><strong>Your privacy is the core of our service. Our policy is simple:</strong></p>
+                <p><strong>1. We Do Not Collect Personal Information:</strong> We do not require or store your name, email, phone number, or IP address.</p>
+                <p><strong>2. End-to-End Encryption:</strong> All your messages are end-to-end encrypted. We cannot read them. They are deleted from our servers immediately after being delivered.</p>
+                <p><strong>3. Data We Store:</strong> The only data we store on our servers are the public keys and usernames required for the app to function. This data cannot be used to identify you personally.</p>
+                <p><strong>4. Local Data:</strong> Your decrypted messages are stored only on your own device. Deleting the app permanently deletes this data.</p>
+            </section>
+            
+            <section id="contact">
+                <h2>Contact & Support</h2>
+                <p>For bug reports, questions, or general inquiries, please reach out to us. We appreciate your feedback in helping us build a more private communication tool.</p>
+                <p>Email: <a href="mailto:support@chatlub.com">support@chatlub.com</a></p>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Chatlub. All Rights Reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
