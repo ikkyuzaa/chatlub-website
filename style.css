@@ -7,10 +7,17 @@
     --heading-color: #FFFFFF;
 }
 
+/* ✅ FIX: 1. Global Box-Sizing Reset */
+/* กำหนดให้ padding และ border ถูกนับรวมในความกว้าง/ความสูงของ element */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 html {
     scroll-behavior: smooth;
-    /* ✅ FIX: ป้องกันการเกิดแถบเลื่อนแนวนอนที่ไม่ต้องการ */
-    overflow-x: hidden;
+    /* ✅ FIX: ป้องกันแถบเลื่อนแนวนอน */
+    overflow-x: hidden; 
+    /* ❌ ลบ min-height ออกจาก html, ให้ body จัดการแทน */
 }
 
 body {
@@ -23,15 +30,15 @@ body {
     color: var(--text-color);
     line-height: 1.8;
     font-weight: 300;
-    /* ✅ FIX: ป้องกันการเกิดแถบเลื่อนแนวนอนที่ไม่ต้องการ */
-    overflow-x: hidden;
+    /* ✅ FIX: ป้องกันแถบเลื่อนแนวนอน */
+    overflow-x: hidden; 
+    width: 100%; /* ให้ body มีความกว้าง 100% เสมอ */
 }
 
 .container {
     max-width: 800px;
     margin: 0 auto;
     padding: 0 20px;
-    /* ✅ FIX: ใช้ box-sizing เพื่อให้ padding ไม่ดัน container ออกนอกจอ */
     box-sizing: border-box; 
 }
 
@@ -43,6 +50,8 @@ header {
     border-bottom: 1px solid rgba(106, 242, 215, 0.1);
     margin-bottom: 40px;
     flex-wrap: wrap;
+    /* ✅ FIX: ให้ header ไม่ดันออกนอกขอบเขต */
+    width: 100%; 
 }
 
 .logo {
@@ -58,8 +67,7 @@ header {
 .logo img {
     width: 32px;
     height: 32px;
-    /* ✅ FIX: เพื่อให้ภาพไม่ล้นหรือเบี้ยว */
-    object-fit: contain; 
+    object-fit: contain;
 }
 
 nav {
