@@ -7,49 +7,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-bg-top: #1C2E58;
-            --primary-bg-bottom: #0A192F;
-            --accent-color: #6AF2D7;
-            --text-color: #E0E0E0;
-            --heading-color: #FFFFFF;
-        }
-        html { scroll-behavior: smooth; }
-        body {
-            margin: 0; padding: 0; font-family: 'IBM Plex Sans Thai', sans-serif;
-            background: linear-gradient(to bottom, var(--primary-bg-top), var(--primary-bg-bottom));
-            background-attachment: fixed; color: var(--text-color); line-height: 1.8; font-weight: 300;
-        }
-        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
-        header {
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 20px 0; border-bottom: 1px solid rgba(106, 242, 215, 0.1); margin-bottom: 40px;
-        }
-        .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--heading-color); font-size: 24px; font-weight: 600; }
-        .logo img { width: 32px; height: 32px; }
-        nav a { color: var(--text-color); text-decoration: none; margin-left: 24px; font-weight: 400; transition: color 0.2s ease; }
-        nav a:hover, .lang-switcher a:hover, .lang-switcher a.active { color: var(--accent-color); }
-        .lang-switcher a { cursor: pointer; font-weight: 600; }
-        .lang-switcher span { margin: 0 5px; opacity: 0.5; }
-        section { padding: 60px 0; }
-        #hero { text-align: center; padding: 80px 0; }
-        h1 { font-size: 48px; color: var(--heading-color); margin-bottom: 16px; }
-        #hero p { font-size: 20px; color: var(--accent-color); }
-        h2 { font-size: 32px; font-weight: 600; color: var(--heading-color); border-bottom: 2px solid var(--accent-color); padding-bottom: 10px; margin-bottom: 24px; }
-        p { margin-bottom: 16px; }
-        a { color: var(--accent-color); text-decoration: none; }
-        footer { text-align: center; padding: 40px 0; margin-top: 60px; border-top: 1px solid rgba(106, 242, 215, 0.1); font-size: 14px; color: rgba(224, 224, 224, 0.5); }
-        
-        /* CSS สำหรับซ่อน/แสดงภาษา */
-        .lang-th { display: none; }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <header>
             <a href="#" class="logo">
-                <img src="chatlub-logo.png" alt="Chatlub Logo">
                 <span>Chatlub</span>
             </a>
             <nav>
@@ -102,20 +65,20 @@
                 </h2>
                 <div class="lang-en">
                     <p><strong>Your privacy is the core of our service. Our policy is simple:</strong></p>
-                    <p>1. We Do Not Collect Personal Information: We do not require or store your name, email, phone number, or IP address.</p>
-                    <p>2. End-to-End Encryption: All your messages are end-to-end encrypted. We cannot read them. They are deleted from our servers immediately after being delivered.</p>
-                    <p>3. Data We Store: The only data we store on our servers are the public keys and usernames required for the app to function. This data cannot be used to identify you personally.</p>
-                    <p>4. Local Data: Your decrypted messages are stored only on your own device. Deleting the app permanently deletes this data.</p>
+                    <p>1. <strong>We Do Not Collect Personal Information:</strong> We do not require or store your name, email, phone number, or IP address.</p>
+                    <p>2. <strong>End-to-End Encryption & Message Handling:</strong> All your messages are end-to-end encrypted; we cannot read them. Our servers only relay your encrypted messages and do not store them beyond the brief time necessary for successful delivery.</p>
+                    <p>3. <strong>Data We Store (Server):</strong> The only data we store on our servers are your <strong>username</strong>, <strong>public key</strong>, and a securely <strong>hashed and salted password</strong> for authentication purposes. This password hash cannot be reversed to reveal your original password and this data cannot be used to identify you personally.</p>
+                    <p>4. <strong>Data On Your Device (Client):</strong> Your messages are stored on your device <strong>in encrypted form</strong>, protected by keys managed securely by your operating system's secure storage. Messages are only decrypted when needed for display within the app. Deleting the application permanently deletes this encrypted data and the keys.</p>
                 </div>
                 <div class="lang-th">
                     <p><strong>ความเป็นส่วนตัวของคุณคือหัวใจของบริการเรา นโยบายของเราเรียบง่ายดังนี้:</strong></p>
                     <p>1. <strong>เราไม่เก็บข้อมูลส่วนบุคคล:</strong> เราไม่ต้องการหรือจัดเก็บชื่อ, อีเมล, หมายเลขโทรศัพท์, หรือ IP Address ของคุณ</p>
-                    <p>2. <strong>การเข้ารหัสตั้งแต่ต้นทางถึงปลายทาง (End-to-End Encryption):</strong> ข้อความทั้งหมดของคุณจะถูกเข้ารหัสแบบ E2EE ซึ่งเราไม่สามารถอ่านได้ และข้อความจะถูกลบออกจากเซิร์ฟเวอร์ของเราทันทีหลังจากส่งถึงผู้รับ</p>
-                    <p>3. <strong>ข้อมูลที่เราจัดเก็บ:</strong> ข้อมูลเดียวที่เราจัดเก็บบนเซิร์ฟเวอร์คือ Public Key และ Username ซึ่งจำเป็นต่อการทำงานของแอป และไม่สามารถใช้เพื่อระบุตัวตนของคุณได้</p>
-                    <p>4. <strong>ข้อมูลบนอุปกรณ์ของคุณ:</strong> ข้อความที่ถอดรหัสแล้วของคุณจะถูกจัดเก็บไว้บนอุปกรณ์ของคุณเท่านั้น การลบแอปพลิเคชันคือการลบข้อมูลนี้อย่างถาวร</p>
+                    <p>2. <strong>การเข้ารหัสตั้งแต่ต้นทางถึงปลายทางและการจัดการข้อความ:</strong> ข้อความทั้งหมดของคุณจะถูกเข้ารหัสแบบ E2EE ซึ่งเราไม่สามารถอ่านได้ เซิร์ฟเวอร์ของเราทำหน้าที่เพียงส่งต่อข้อความที่เข้ารหัสของคุณ และจะไม่จัดเก็บข้อความเหล่านั้นเกินกว่าระยะเวลาสั้นๆ ที่จำเป็นในการส่งให้สำเร็จ</p>
+                    <p>3. <strong>ข้อมูลที่เราจัดเก็บ (เซิร์ฟเวอร์):</strong> ข้อมูลเดียวที่เราจัดเก็บบนเซิร์ฟเวอร์คือ <strong>Username</strong>, <strong>Public Key</strong>, และ <strong>รหัสผ่านที่ถูกแฮชและซอลท์ (Hashed and Salted Password)</strong> อย่างปลอดภัย เพื่อใช้ในการยืนยันตัวตนเท่านั้น Hash ของรหัสผ่านนี้ไม่สามารถแปลงกลับเป็นรหัสผ่านเดิมได้ และข้อมูลนี้ไม่สามารถใช้เพื่อระบุตัวตนของคุณได้</p>
+                    <p>4. <strong>ข้อมูลบนอุปกรณ์ของคุณ (ไคลเอนต์):</strong> ข้อความของคุณจะถูกจัดเก็บไว้บนอุปกรณ์ของคุณ <strong>ในรูปแบบที่เข้ารหัส</strong> โดยได้รับการป้องกันจาก Key ที่จัดเก็บอย่างปลอดภัยโดยระบบปฏิบัติการ ข้อความจะถูกถอดรหัสเมื่อจำเป็นต้องแสดงผลในแอปเท่านั้น การลบแอปพลิเคชันคือการลบข้อมูลที่เข้ารหัสและ Key เหล่านี้อย่างถาวร</p>
                 </div>
             </section>
-            
+
             <section id="contact">
                 <h2>
                     <span class="lang-en">Contact & Support</span>
@@ -148,11 +111,12 @@
             });
             // แสดงเฉพาะภาษาที่เลือก
             document.querySelectorAll(`.lang-${lang}`).forEach(el => {
-                el.style.display = 'inline'; // ใช้ 'inline' หรือ 'block' ตามความเหมาะสม
-            });
-             // แก้ไข display สำหรับ element ที่เป็น block
-            document.querySelectorAll(`div.lang-${lang}`).forEach(el => {
-                el.style.display = 'block';
+                // Check if the element is a block-level element like DIV
+                if (el.tagName === 'DIV') {
+                     el.style.display = 'block';
+                } else {
+                     el.style.display = 'inline'; // Default for spans, links etc.
+                }
             });
 
             // อัปเดตปุ่มที่ Active
@@ -180,7 +144,7 @@
                 if (browserLang.startsWith('th')) {
                     setLang('th');
                 } else {
-                    setLang('en');
+                    setLang('en'); // Default to English
                 }
             }
         });
