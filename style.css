@@ -8,19 +8,20 @@
 }
 
 /* ✅ FIX 1: Global Box-Sizing Reset */
-/* กำหนดให้ padding และ border ถูกนับรวมในความกว้าง/ความสูงของ element */
 *, *::before, *::after {
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
+/* ✅ FIX 2: ป้องกันการสร้าง Scrollbar บน HTML และ BODY */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    /* กำหนดให้ความกว้างของ viewport เป็นขอบเขตหลัก (ป้องกันองค์ประกอบล้น) */
     overflow-x: hidden; 
 }
 
 body {
-    margin: 0;
-    padding: 0;
     font-family: 'IBM Plex Sans Thai', sans-serif;
     background: linear-gradient(to bottom, var(--primary-bg-top), var(--primary-bg-bottom));
     background-attachment: fixed;
@@ -28,8 +29,6 @@ body {
     color: var(--text-color);
     line-height: 1.8;
     font-weight: 300;
-    overflow-x: hidden; 
-    width: 100%;
 }
 
 .container {
@@ -37,14 +36,20 @@ body {
     margin: 0 auto;
     padding: 0 20px;
     box-sizing: border-box; 
-    /* ✅ FIX 2: ป้องกัน container ดันพื้นที่ด้านล่างเกินจำเป็น */
     padding-bottom: 0 !important; 
+    /* ✅ FIX 3: กำหนด Max Width ที่ 100% ของ Viewport */
+    max-width: 100vw; 
 }
 
-/* ✅ FIX 3: Reset margin-bottom ของ paragraph เพื่อให้ footer แนบสนิท */
-p:last-child {
-    margin-bottom: 0; 
+/* องค์ประกอบหลักอื่นๆ ที่อาจสร้างปัญหา ควรถูกจำกัดความกว้าง */
+header, main, footer, section {
+    width: 100%;
+    /* ✅ FIX 4: ตรวจสอบให้แน่ใจว่าไม่มี padding/margin แนวนอนที่ทำให้เกิด Scrollbar */
+    padding-left: 0; 
+    padding-right: 0;
 }
+
+/* ... โค้ดส่วนอื่นๆ ที่เหลือ (ไม่เปลี่ยนแปลง) ... */
 
 header {
     display: flex;
@@ -54,7 +59,6 @@ header {
     border-bottom: 1px solid rgba(106, 242, 215, 0.1);
     margin-bottom: 40px;
     flex-wrap: wrap;
-    width: 100%; 
 }
 
 .logo {
@@ -70,7 +74,7 @@ header {
 .logo img {
     width: 32px;
     height: 32px;
-    object-fit: contain;
+    object-fit: contain; 
 }
 
 nav {
@@ -137,8 +141,8 @@ h2 {
     margin-bottom: 24px;
 }
 
-p {
-    margin-bottom: 16px;
+p:last-child {
+    margin-bottom: 0; 
 }
 
 a {
@@ -153,7 +157,6 @@ footer {
     border-top: 1px solid rgba(106, 242, 215, 0.1);
     font-size: 14px;
     color: rgba(224, 224, 224, 0.5);
-    /* ✅ FIX 4: มั่นใจว่า footer ไม่เกิด margin นอกเหนือจากที่กำหนด */
     width: 100%;
 }
 
